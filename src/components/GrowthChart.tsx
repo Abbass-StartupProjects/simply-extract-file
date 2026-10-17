@@ -16,13 +16,13 @@ export default function GrowthChart({ className = '' }: Props) {
     >
       <defs>
         <linearGradient id="growth-line" x1="0" y1="320" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#06b6d4" />
-          <stop offset="0.55" stopColor="#22d3ee" />
+          <stop offset="0" stopColor="#f59e0b" />
+          <stop offset="0.55" stopColor="#fdb81e" />
           <stop offset="1" stopColor="#34d399" />
         </linearGradient>
         <linearGradient id="growth-area" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#22d3ee" stopOpacity="0.22" />
-          <stop offset="1" stopColor="#22d3ee" stopOpacity="0" />
+          <stop offset="0" stopColor="#fdb81e" stopOpacity="0.22" />
+          <stop offset="1" stopColor="#fdb81e" stopOpacity="0" />
         </linearGradient>
       </defs>
 
