@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
+import PageHero from '@/components/PageHero';
   MessageSquare, CheckCircle2, AlertCircle, ArrowLeft, LockKeyhole,
   Bug, Lightbulb, Flag, HelpCircle, Clock, XCircle, Send, Loader2, ChevronRight,
 } from 'lucide-react';
@@ -270,17 +271,8 @@ export default function FeedbackPage() {
 
   return (
     <div ref={scrollRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <button onClick={() => navigate('home')} className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-900 mb-6 transition-colors">
-        <ArrowLeft className="w-4 h-4" /> Back to home
-      </button>
 
-      <div className="flex items-center gap-3 mb-2 reveal">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center shadow-glow">
-          <MessageSquare className="w-5 h-5 text-white" />
-        </div>
-        <h1 className="text-3xl font-bold text-ink-900">Feedback & Support</h1>
-      </div>
-      <p className="text-ink-600 mb-8 reveal">Found a bug, have a suggestion, or want to report something? We're listening.</p>
+      <PageHero icon={MessageSquare} eyebrow="Support" title={'Feedback & Support'} subtitle={"Found a bug, have a suggestion, or want to report something? We're listening."} back={{ label: 'Back to home', onClick: () => navigate('home') }} />
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* Form */}

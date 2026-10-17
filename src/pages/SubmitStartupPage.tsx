@@ -6,6 +6,7 @@ import { useCategories, useRegions } from '@/lib/hooks';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 import { useAuth } from '@/lib/auth';
 import BoostModal from '@/components/BoostModal';
+import PageHero from '@/components/PageHero';
 
 export default function SubmitStartupPage() {
   const { navigate } = useRouter();
@@ -137,17 +138,7 @@ export default function SubmitStartupPage() {
 
   return (
     <div ref={scrollRef} className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <button onClick={() => navigate('startups')} className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-900 mb-6 transition-colors">
-        <ArrowLeft className="w-4 h-4" />
-        Back to directory
-      </button>
-      <div className="flex items-center gap-3 mb-2 reveal">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center shadow-glow">
-          <Rocket className="w-5 h-5 text-white" />
-        </div>
-        <h1 className="text-3xl font-bold text-ink-900">List Your Startup</h1>
-      </div>
-      <p className="text-ink-600 mb-8 reveal">Get discovered by early adopters and customers from around the world. It's free.</p>
+      <PageHero icon={Rocket} eyebrow="Submit" title={'List Your Startup'} subtitle={"Get discovered by early adopters and customers from around the world. It's free."} back={{ label: 'Back to directory', onClick: () => navigate('startups') }} />
 
       {error && (
         <div className="mb-6 flex items-center gap-2 px-4 py-3 rounded-xl bg-error-50 border border-error-100 text-error-700 text-sm animate-slide-down">
