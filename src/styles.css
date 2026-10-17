@@ -3,7 +3,7 @@
 
 @layer base {
   :root {
-    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-inter: 'Geist', system-ui, sans-serif;
   }
 
   html {
@@ -17,11 +17,19 @@
     font-family: var(--font-inter);
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     line-height: 1.6;
-    background-color: #ffffff;
+    background-color: #faf8f5;
+    color: #16130f;
+  }
+
+  h3 { letter-spacing: -0.01em !important; }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", Geist, system-ui, sans-serif;
+    letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 96;
   }
 
   ::selection {
-    background-color: #2563eb;
+    background-color: #ff5a1f;
     color: #ffffff;
   }
   /* Gradient-filled text paints its fill with -webkit-text-fill-color:
@@ -30,7 +38,7 @@
      backgrounds. */
   .gradient-text::selection,
   .text-gradient-bright::selection {
-    background-color: #2563eb;
+    background-color: #ff5a1f;
     -webkit-text-fill-color: #ffffff;
     color: #ffffff;
   }
@@ -44,13 +52,13 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(148, 163, 184, 0.3);
+    background: rgba(120, 112, 95, 0.3);
     border-radius: 999px;
     border: 2px solid transparent;
     background-clip: content-box;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(148, 163, 184, 0.5);
+    background: rgba(120, 112, 95, 0.5);
     background-clip: content-box;
   }
 }
@@ -83,7 +91,7 @@
     display: inline-block;
     padding-bottom: 0.14em;
     margin-bottom: -0.14em;
-    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    background: linear-gradient(135deg, #ff5a1f 0%, #f59e0b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -92,7 +100,7 @@
   /* Bright gradient for dark backgrounds — the old blue/cyan mix turned
      muddy on navy; these high-luminosity stops keep the headline readable. */
   .text-gradient-bright {
-    background: linear-gradient(100deg, #67e8f9 0%, #38bdf8 45%, #6ee7b7 100%);
+    background: linear-gradient(100deg, #ffcd47 0%, #ff9f6d 45%, #ffe285 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -142,12 +150,12 @@
 
   /* Glass effect */
   .glass {
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(250, 248, 245, 0.78);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
   .glass-dark {
-    background: rgba(15, 23, 42, 0.72);
+    background: rgba(22, 19, 15, 0.78);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
@@ -158,7 +166,7 @@
     position: relative;
     --spotlight-x: 50%;
     --spotlight-y: 50%;
-    --spotlight-glow: 37, 99, 235;
+    --spotlight-glow: 255, 90, 31;
   }
   .spotlight-card::before {
     content: '';
@@ -192,9 +200,9 @@
   .skeleton {
     background: linear-gradient(
       90deg,
-      rgba(226, 232, 240, 0.4) 25%,
-      rgba(226, 232, 240, 0.7) 50%,
-      rgba(226, 232, 240, 0.4) 75%
+      rgba(230, 225, 216, 0.4) 25%,
+      rgba(230, 225, 216, 0.7) 50%,
+      rgba(230, 225, 216, 0.4) 75%
     );
     background-size: 200% 100%;
     animation: shimmer 2s linear infinite;
@@ -203,8 +211,8 @@
   /* Grid background pattern */
   .grid-pattern {
     background-image:
-      linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+      linear-gradient(to right, rgba(120, 112, 95, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(120, 112, 95, 0.07) 1px, transparent 1px);
     background-size: 56px 56px;
   }
 
@@ -212,8 +220,8 @@
      like Vercel/Linear. Pure CSS, zero script cost. */
   .hero-grid {
     background-image:
-      linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      linear-gradient(to right, rgba(120, 112, 95, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(120, 112, 95, 0.08) 1px, transparent 1px);
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
@@ -228,7 +236,7 @@
 
   /* Dot pattern */
   .dot-pattern {
-    background-image: radial-gradient(circle, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(120, 112, 95, 0.15) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
@@ -244,7 +252,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1.5px;
-    background: linear-gradient(135deg, #2563eb, #06b6d4, #2563eb);
+    background: linear-gradient(135deg, #ff5a1f, #f59e0b, #ff5a1f);
     background-size: 200% 200%;
     animation: gradient-shift 4s ease infinite;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -284,7 +292,7 @@
   select:focus-visible,
   textarea:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid #2563eb;
+    outline: 2px solid #ff5a1f;
     outline-offset: 2px;
     border-radius: 0.5rem;
   }

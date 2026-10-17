@@ -43,7 +43,7 @@ export default function ChannelCard({ channel, hasVoted, onVote }: Props) {
 
   return (
     <SpotlightCard
-      glow={channel.is_featured ? '217, 119, 6' : '37, 99, 235'}
+      glow={channel.is_featured ? '217, 119, 6' : '255, 90, 31'}
       className={`group card-hover bg-white rounded-2xl p-6 hover:shadow-soft-lg overflow-hidden relative ${channel.is_featured ? 'border-2 border-warning-300 shadow-soft-lg' : 'border border-ink-200/80 hover:border-brand-200/60'}`}
     >
       {/* Subtle gradient on hover */}
