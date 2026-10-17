@@ -44,7 +44,7 @@ export default function ChannelCard({ channel, hasVoted, onVote }: Props) {
   return (
     <SpotlightCard
       glow={channel.is_featured ? '217, 119, 6' : '37, 99, 235'}
-      className={`group card-hover bg-white rounded-2xl p-6 hover:shadow-soft-lg overflow-hidden relative ${channel.is_featured ? 'border-2 border-warning-300 shadow-soft-lg' : 'border border-ink-200/80 hover:border-brand-200/60'}`}
+      className={`group card-hover bg-white rounded-3xl p-6 hover:shadow-soft-lg overflow-hidden relative ${channel.is_featured ? 'border-2 border-warning-300 shadow-soft-lg' : 'border border-ink-200/80 hover:border-brand-200/60'}`}
     >
       {/* Subtle gradient on hover */}
       <div className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${channel.is_featured ? 'bg-gradient-to-br from-warning-50/50 to-warning-100/30' : 'bg-gradient-to-br from-brand-50/40 to-accent-50/40 opacity-0 group-hover:opacity-100'}`} />

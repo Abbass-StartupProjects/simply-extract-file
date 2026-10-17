@@ -1,3 +1,4 @@
+import PageHero from '@/components/PageHero';
 import { useState, useEffect } from 'react';
 import {
   Bell, CheckCircle2, AlertCircle, Loader2, Slack, Save, ExternalLink,
@@ -113,15 +114,7 @@ export default function SlackSettingsPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="flex items-center gap-3 mb-2">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center shadow-glow">
-          <Bell className="w-5 h-5 text-white" />
-        </div>
-        <h1 className="text-3xl font-bold text-ink-900">Notifications</h1>
-      </div>
-      <p className="text-ink-600 mb-8">
-        Get a Slack message the moment something happens that needs your attention.
-      </p>
+      <PageHero icon={Bell} eyebrow="Settings" title={'Notifications'} subtitle={'Get a Slack message the moment something happens that needs your attention.'} />
 
       {loading ? (
         <div className="flex items-center justify-center py-16"><Loader2 className="w-6 h-6 text-ink-300 animate-spin" /></div>

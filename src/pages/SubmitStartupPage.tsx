@@ -1,3 +1,4 @@
+import PageHero from '@/components/PageHero';
 import { useState } from 'react';
 import { Rocket, CheckCircle2, AlertCircle, ArrowLeft, Sparkles, LockKeyhole } from 'lucide-react';
 import { useRouter } from '@/lib/router';
@@ -137,17 +138,7 @@ export default function SubmitStartupPage() {
 
   return (
     <div ref={scrollRef} className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <button onClick={() => navigate('startups')} className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-900 mb-6 transition-colors">
-        <ArrowLeft className="w-4 h-4" />
-        Back to directory
-      </button>
-      <div className="flex items-center gap-3 mb-2 reveal">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center shadow-glow">
-          <Rocket className="w-5 h-5 text-white" />
-        </div>
-        <h1 className="text-3xl font-bold text-ink-900">List Your Startup</h1>
-      </div>
-      <p className="text-ink-600 mb-8 reveal">Get discovered by early adopters and customers from around the world. It's free.</p>
+      <PageHero icon={Rocket} eyebrow="Submit" title={'List Your Startup'} subtitle={"Get discovered by early adopters and customers from around the world. It's free."} back={{ label: 'Back to directory', onClick: () => navigate('startups') }} />
 
       {error && (
         <div className="mb-6 flex items-center gap-2 px-4 py-3 rounded-xl bg-error-50 border border-error-100 text-error-700 text-sm animate-slide-down">
@@ -156,7 +147,7 @@ export default function SubmitStartupPage() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="form-card space-y-5 p-6 sm:p-10">
         <div className="reveal">
           <label htmlFor="su-name" className={labelClass}>Startup Name <span className="text-error-500">*</span></label>
           <input id="su-name" type="text" required value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="e.g. NimbusDeploy" className={inputClass} />

@@ -1,3 +1,4 @@
+import PageHero from '@/components/PageHero';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ShieldCheck, Loader2, AlertCircle, CheckCircle2, Rocket, Radio, Users,
@@ -356,13 +357,7 @@ export default function AdminPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="flex items-center gap-3 mb-2">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center shadow-glow">
-          <ShieldCheck className="w-5 h-5 text-white" />
-        </div>
-        <h1 className="text-3xl font-bold text-ink-900">Admin dashboard</h1>
-      </div>
-      <p className="text-ink-600 mb-8">Manage everything that happens on Launchrocket from one place.</p>
+      <PageHero icon={ShieldCheck} eyebrow="Owner" title={'Admin dashboard'} subtitle={'Manage everything that happens on Launchrocket from one place.'} />
 
       {/* tabs */}
       <div className="flex flex-wrap gap-2 mb-8">
