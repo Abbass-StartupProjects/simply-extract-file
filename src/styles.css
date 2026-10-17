@@ -331,3 +331,8 @@ input:not([type=checkbox]):not([type=radio]):hover, textarea:hover, select:hover
 input:focus-visible, textarea:focus-visible, select:focus-visible { box-shadow: 0 0 0 4px rgba(37,99,235,.12); }
 .form-card { background: #fff; border: 1px solid rgba(226,232,240,.8); border-radius: 1.75rem; box-shadow: 0 4px 16px -4px rgba(15,23,42,.08), 0 24px 60px -24px rgba(37,99,235,.18); }
 @media (prefers-reduced-motion: reduce) { .page-hero-in { animation: none; } }
+/* Card hover accent: gradient hairline sweeps in along the top edge */
+.card-hover { position: relative; }
+.card-hover::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, #2563eb, #06b6d4); transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+.card-hover:hover::after { transform: scaleX(1); }
+.card-hover:hover { box-shadow: 0 20px 50px -24px rgba(37,99,235,.35); }

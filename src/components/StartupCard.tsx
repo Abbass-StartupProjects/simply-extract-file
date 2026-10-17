@@ -58,7 +58,7 @@ export default function StartupCard({ startup, hasVoted, onVote }: Props) {
     <>
       <SpotlightCard
         glow={featured ? '217, 119, 6' : '37, 99, 235'}
-        className={`group card-hover bg-white rounded-2xl p-6 relative overflow-hidden ${
+        className={`group card-hover bg-white rounded-3xl p-6 relative overflow-hidden ${
           featured
             ? 'border-2 border-warning-300 shadow-soft-lg'
             : 'border border-ink-200/80 hover:shadow-soft-lg hover:border-brand-200/60'
