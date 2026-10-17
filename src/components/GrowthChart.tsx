@@ -16,13 +16,13 @@ export default function GrowthChart({ className = '' }: Props) {
     >
       <defs>
         <linearGradient id="growth-line" x1="0" y1="320" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#f59e0b" />
-          <stop offset="0.55" stopColor="#fdb81e" />
-          <stop offset="1" stopColor="#34d399" />
+          <stop offset="0" stopColor="#fdb81e" />
+          <stop offset="0.55" stopColor="#ff7a3d" />
+          <stop offset="1" stopColor="#ff5a1f" />
         </linearGradient>
         <linearGradient id="growth-area" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#fdb81e" stopOpacity="0.22" />
-          <stop offset="1" stopColor="#fdb81e" stopOpacity="0" />
+          <stop offset="0" stopColor="#ff7a3d" stopOpacity="0.18" />
+          <stop offset="1" stopColor="#ff7a3d" stopOpacity="0" />
         </linearGradient>
       </defs>
 
@@ -46,8 +46,8 @@ export default function GrowthChart({ className = '' }: Props) {
       />
 
       {/* Pulsing tip at the end of the trend */}
-      <circle className="chart-tip" cx="1200" cy="28" r="5" fill="#34d399" />
-      <circle className="chart-tip-ring" cx="1200" cy="28" r="5" stroke="#34d399" fill="none" />
+      <circle className="chart-tip" cx="1200" cy="28" r="5" fill="#ff5a1f" />
+      <circle className="chart-tip-ring" cx="1200" cy="28" r="5" stroke="#ff5a1f" fill="none" />
     </svg>
   );
 }
