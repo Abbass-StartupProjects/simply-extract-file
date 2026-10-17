@@ -21,6 +21,7 @@
     color: #16130f;
   }
 
+  h3 { letter-spacing: -0.01em !important; }
   h1, h2, h3 {
     font-family: "Bricolage Grotesque", Geist, system-ui, sans-serif;
     letter-spacing: -0.03em;
