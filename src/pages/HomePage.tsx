@@ -13,6 +13,7 @@ import StartupCard from '@/components/StartupCard';
 import CountUp from '@/components/CountUp';
 import GrowthChart from '@/components/GrowthChart';
 import { getIcon } from '@/lib/ui';
+import heroRocket from '@/assets/hero-rocket.webp';
 
 export default function HomePage() {
   const { navigate } = useRouter();
@@ -91,100 +92,143 @@ export default function HomePage() {
   return (
     <div ref={scrollRef}>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-ink-50 via-white to-white">
-        {/* Background patterns */}
-        <div className="absolute inset-0 grid-pattern opacity-60" />
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-brand-200/30 blur-3xl animate-float hero-blob" />
-          <div className="absolute top-20 -left-32 w-[24rem] h-[24rem] rounded-full bg-accent-200/30 blur-3xl animate-float hero-blob" style={{ animationDelay: '2s' }} />
+      <section className="relative overflow-hidden bg-ink-950 text-white">
+        <div className="absolute inset-0 hero-grid opacity-40" />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="aurora-blob hero-blob absolute -top-40 -left-20 w-[38rem] h-[38rem] rounded-full bg-brand-600/40 blur-[120px]" />
+          <div className="aurora-blob hero-blob absolute top-10 right-0 w-[32rem] h-[32rem] rounded-full bg-accent-500/25 blur-[120px]" style={{ animationDelay: '-6s' }} />
+          <div className="aurora-blob absolute bottom-0 left-1/3 w-[28rem] h-[28rem] rounded-full bg-brand-400/20 blur-[100px]" style={{ animationDelay: '-12s' }} />
         </div>
-        {/* Stock-ticker uptrend sweeping the bottom of the hero — growth made visible */}
-        <GrowthChart className="absolute inset-x-0 bottom-0 w-full h-44 sm:h-60 chart-sweep opacity-90" />
+        <div className="absolute inset-0 hero-grain pointer-events-none" />
+        <GrowthChart className="absolute inset-x-0 bottom-0 w-full h-40 sm:h-52 chart-sweep opacity-50" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-40">
-          <div className="text-center max-w-3xl mx-auto">
-            {/* Badge */}
-            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-brand-200/60 text-brand-600 text-xs font-semibold mb-8">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500" />
-              </span>
-              <Zap className="w-3.5 h-3.5" />
-              Find your first customers — anywhere in the world
-            </div>
-
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-ink-900 leading-[1.15] text-balance">
-              <span className="hero-word inline-block">Launch</span>{' '}
-              <span className="hero-word inline-block">your</span>{' '}
-              <span className="hero-word inline-block">startup.</span>
-              <br />
-              <span className="hero-word inline-block gradient-text">Go</span>{' '}
-              <span className="hero-word inline-block gradient-text">global.</span>
-            </h1>
-
-            <p className="hero-copy text-lg text-ink-600 mt-7 leading-relaxed max-w-2xl mx-auto text-pretty">
-              The platform where founders discover the best channels to find early
-              customers worldwide — and showcase their startups to a global community
-              of early adopters.
-            </p>
-
-            {/* Search bar */}
-            <div className="hero-search mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-              <div className="relative flex-1 group">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ink-400 group-focus-within:text-brand-500 transition-colors" />
-                <input
-                  type="text"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                  placeholder="Search channels, communities, platforms..."
-                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-ink-200 bg-white/80 text-ink-900 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:border-brand-300 shadow-soft transition-all"
-                />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-36">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur text-accent-200 text-xs font-semibold mb-8">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-400" />
+                </span>
+                <Zap className="w-3.5 h-3.5" />
+                Find your first customers — anywhere in the world
               </div>
-              <button
-                onClick={handleSearch}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-700 hover:to-accent-700 shadow-glow transition-all duration-300 hover:shadow-glow-lg hover:scale-[1.02]"
-              >
-                <Search className="w-5 h-5" />
-                Search
-              </button>
+
+              <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tighter leading-[1.02] text-balance">
+                <span className="block overflow-hidden"><span className="hero-word inline-block">Launch</span>{' '}<span className="hero-word inline-block">your</span>{' '}<span className="hero-word inline-block">startup.</span></span>
+                <span className="block overflow-hidden pb-2"><span className="hero-word inline-block text-gradient-bright">Go</span>{' '}<span className="hero-word inline-block text-gradient-bright">global.</span></span>
+              </h1>
+
+              <p className="hero-copy text-lg text-ink-300 mt-7 leading-relaxed max-w-xl mx-auto lg:mx-0 text-pretty">
+                The platform where founders discover the best channels to find early
+                customers worldwide — and showcase their startups to a global community
+                of early adopters.
+              </p>
+
+              <div className="hero-search conic-border mt-10 rounded-2xl max-w-xl mx-auto lg:mx-0">
+                <div className="flex items-center gap-2 rounded-2xl bg-ink-900/95 p-2">
+                  <Search className="ml-3 w-5 h-5 text-ink-400 shrink-0" />
+                  <input
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                    placeholder="Search channels, communities, platforms..."
+                    aria-label="Search channels"
+                    className="min-w-0 flex-1 bg-transparent px-2 py-3 text-white placeholder-ink-500 focus:outline-none"
+                  />
+                  <button
+                    onClick={handleSearch}
+                    className="shine inline-flex shrink-0 items-center gap-2 px-5 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 to-accent-600 hover:shadow-glow-lg transition-shadow"
+                  >
+                    Search <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="hero-links flex items-center justify-center lg:justify-start gap-4 mt-6 text-sm">
+                <button onClick={() => navigate('submit-startup')} className="text-accent-300 font-semibold hover:text-white inline-flex items-center gap-1 group transition-colors">
+                  List your startup <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+                <span className="text-ink-700">|</span>
+                <button onClick={() => navigate('submit-channel')} className="text-ink-300 font-medium hover:text-white transition-colors">
+                  Submit a channel
+                </button>
+              </div>
             </div>
 
-            <div className="hero-links flex items-center justify-center gap-4 mt-6 text-sm">
-              <button
-                onClick={() => navigate('submit-startup')}
-                className="text-brand-600 font-semibold hover:text-brand-700 inline-flex items-center gap-1 group transition-colors"
-              >
-                List your startup
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-              <span className="text-ink-300">|</span>
-              <button
-                onClick={() => navigate('submit-channel')}
-                className="text-ink-600 font-medium hover:text-ink-900 transition-colors"
-              >
-                Submit a channel
-              </button>
+            {/* Visual */}
+            <div className="relative mx-auto w-full max-w-md lg:max-w-none aspect-square hidden sm:block">
+              <div className="glow-pulse absolute inset-[18%] rounded-full bg-brand-500/40 blur-3xl" />
+              <div className="orbit-ring absolute inset-[6%] rounded-full border border-dashed border-white/10" />
+              <div className="orbit-ring absolute inset-[18%] rounded-full border border-white/5" style={{ animationDirection: 'reverse', animationDuration: '60s' }} />
+              <img src={heroRocket} alt="Rocket launching from a glowing globe" width={720} height={720} fetchPriority="high" decoding="async" className="rocket-float relative w-full h-full object-contain drop-shadow-[0_30px_60px_rgba(37,99,235,0.45)]" />
+              <div className="chip-float absolute top-[14%] -left-2 flex items-center gap-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md px-3 py-2 text-xs font-semibold shadow-soft-lg">
+                <TrendingUp className="w-4 h-4 text-success-400" /> +342 upvotes today
+              </div>
+              <div className="chip-float absolute bottom-[22%] -right-2 flex items-center gap-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md px-3 py-2 text-xs font-semibold shadow-soft-lg" style={{ animationDelay: '-3s' }}>
+                <Globe2 className="w-4 h-4 text-accent-300" /> {regions.length || 8} regions live
+              </div>
+              <div className="chip-float absolute bottom-[6%] left-[12%] flex items-center gap-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md px-3 py-2 text-xs font-semibold shadow-soft-lg" style={{ animationDelay: '-5s' }}>
+                <Users className="w-4 h-4 text-brand-300" /> First customer found
+              </div>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 mb-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-16 max-w-5xl mx-auto">
             {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="stat-card bg-white rounded-2xl border border-ink-200/60 p-5 text-center card-hover hover:shadow-soft"
-              >
-                <stat.icon className="w-6 h-6 text-brand-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-ink-900"><CountUp value={stat.value} /></div>
-                <div className="text-xs text-ink-500 mt-1">{stat.label}</div>
+              <div key={stat.label} className="stat-card group rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur p-5 hover:bg-white/[0.08] hover:border-accent-400/30 transition-colors">
+                <stat.icon className="w-5 h-5 text-accent-300 mb-3 group-hover:scale-110 transition-transform" />
+                <div className="text-3xl font-extrabold tracking-tight"><CountUp value={stat.value} /></div>
+                <div className="text-xs text-ink-400 mt-1 uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* MARQUEE */}
+      {featuredChannels.length > 0 && (
+        <section aria-label="Featured channels" className="border-y border-ink-200/70 bg-white py-5">
+          <div className="marquee overflow-hidden">
+            <div className="marquee-track gap-10">
+              {[...channels, ...channels].map((c, i) => (
+                <button key={c.id + i} onClick={() => navigate('channels', { q: c.name })} className="flex shrink-0 items-center gap-2 text-ink-400 hover:text-brand-600 font-semibold text-lg transition-colors" tabIndex={i >= channels.length ? -1 : 0}>
+                  <Sparkles className="w-4 h-4 text-accent-500" /> {c.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* HOW IT WORKS — bento */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
+        <div className="reveal text-center max-w-2xl mx-auto mb-12">
+          <span className="text-brand-600 text-sm font-semibold uppercase tracking-widest">How it works</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink-900 mt-3 text-balance">From zero to your first customers</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-5">
+          {[
+            { icon: Search, t: 'Discover channels', d: 'Browse curated communities, directories and platforms filtered by category and region.', go: () => navigate('channels'), span: 'md:col-span-2', dark: true },
+            { icon: Rocket, t: 'List your startup', d: 'Get in front of early adopters worldwide — free.', go: () => navigate('submit-startup'), span: '', dark: false },
+            { icon: TrendingUp, t: 'Climb the board', d: 'Upvotes push the best products to the top.', go: () => navigate('startups'), span: '', dark: false },
+            { icon: Globe2, t: 'Go global', d: `Reach customers across ${regions.length || 8} regions with channels that actually convert.`, go: () => navigate('channels'), span: 'md:col-span-2', dark: false },
+          ].map((b, i) => (
+            <button key={b.t} onClick={b.go} className={`reveal bento-card group relative overflow-hidden text-left rounded-3xl p-8 min-h-[220px] border ${b.span} ${b.dark ? 'bg-ink-950 border-ink-800 text-white' : 'bg-white border-ink-200/80'}`}>
+              <div className={`absolute -right-10 -bottom-10 w-48 h-48 rounded-full blur-3xl transition-opacity opacity-40 group-hover:opacity-80 ${i % 2 ? 'bg-accent-300/40' : 'bg-brand-500/30'}`} />
+              <span className={`text-xs font-mono ${b.dark ? 'text-ink-500' : 'text-ink-400'}`}>0{i + 1}</span>
+              <div className="relative mt-4 w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-600 to-accent-500 flex items-center justify-center shadow-glow group-hover:rotate-6 group-hover:scale-110 transition-transform duration-300">
+                <b.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className={`relative text-xl font-bold mt-5 ${b.dark ? 'text-white' : 'text-ink-900'}`}>{b.t}</h3>
+              <p className={`relative mt-2 max-w-md ${b.dark ? 'text-ink-400' : 'text-ink-500'}`}>{b.d}</p>
+              <ArrowRight className={`absolute top-8 right-8 w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 -rotate-45 ${b.dark ? 'text-ink-500' : 'text-ink-300'}`} />
+            </button>
+          ))}
+        </div>
+      </section>
       {/* CATEGORIES */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex items-end justify-between mb-10 reveal">
@@ -341,17 +385,17 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 via-brand-700 to-accent-700 p-8 sm:p-16 text-center">
+        <div className="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-600 via-brand-700 to-accent-700 p-8 sm:p-20 text-center">
           <div className="absolute inset-0 dot-pattern opacity-20" />
           <div className="absolute inset-0">
-            <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-3xl animate-float" />
+            <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-3xl aurora-blob" />
             <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent-300/20 blur-3xl animate-float" style={{ animationDelay: '3s' }} />
           </div>
           <div className="relative">
             <div className="inline-flex w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm items-center justify-center mb-5">
               <Users className="w-7 h-7 text-white" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-balance">
+            <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-5 text-balance">
               Ready to find your first customers?
             </h2>
             <p className="text-brand-100 text-lg max-w-xl mx-auto mb-8 text-pretty">
@@ -361,7 +405,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={() => navigate('submit-startup')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-brand-600 bg-white hover:bg-brand-50 shadow-soft-lg transition-all duration-300 hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl shine font-semibold text-brand-600 bg-white hover:bg-brand-50 shadow-soft-lg transition-all duration-300 hover:scale-[1.02]"
               >
                 <Rocket className="w-5 h-5" />
                 List Your Startup
