@@ -3,14 +3,14 @@ import { useRef, type CSSProperties, type ReactNode } from 'react';
 type Props = {
   children: ReactNode;
   className?: string;
-  /** Glow tint as an rgb triplet, e.g. "255, 90, 31" */
+  /** Glow tint as an rgb triplet, e.g. "37, 99, 235" */
   glow?: string;
 };
 
 // React Bits-style spotlight card: a soft radial light follows the pointer.
 // Implemented with CSS custom properties only — no re-renders, no observers,
 // mousemove writes two variables and the browser does the rest on the GPU.
-export default function SpotlightCard({ children, className = '', glow = '255, 90, 31' }: Props) {
+export default function SpotlightCard({ children, className = '', glow = '37, 99, 235' }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   const onMove = (e: React.MouseEvent) => {

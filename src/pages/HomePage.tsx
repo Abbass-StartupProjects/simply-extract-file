@@ -91,12 +91,12 @@ export default function HomePage() {
   return (
     <div ref={scrollRef}>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-50">
+      <section className="relative overflow-hidden bg-gradient-to-b from-ink-50 via-white to-white">
         {/* Background patterns */}
-        <div className="absolute inset-0 hero-grid" />
+        <div className="absolute inset-0 grid-pattern opacity-60" />
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-brand-300/25 blur-3xl animate-float hero-blob" />
-          <div className="absolute top-20 -left-32 w-[24rem] h-[24rem] rounded-full bg-accent-200/40 blur-3xl animate-float hero-blob" style={{ animationDelay: '2s' }} />
+          <div className="absolute -top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-brand-200/30 blur-3xl animate-float hero-blob" />
+          <div className="absolute top-20 -left-32 w-[24rem] h-[24rem] rounded-full bg-accent-200/30 blur-3xl animate-float hero-blob" style={{ animationDelay: '2s' }} />
         </div>
         {/* Stock-ticker uptrend sweeping the bottom of the hero — growth made visible */}
         <GrowthChart className="absolute inset-x-0 bottom-0 w-full h-44 sm:h-60 chart-sweep opacity-90" />
@@ -104,7 +104,7 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-40">
           <div className="text-center max-w-3xl mx-auto">
             {/* Badge */}
-            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ink-900 text-ink-50 text-xs font-medium tracking-wide mb-10 shadow-soft">
+            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-brand-200/60 text-brand-600 text-xs font-semibold mb-8">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500" />
@@ -114,7 +114,7 @@ export default function HomePage() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-ink-900 leading-[0.95] text-balance">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-ink-900 leading-[1.15] text-balance">
               <span className="hero-word inline-block">Launch</span>{' '}
               <span className="hero-word inline-block">your</span>{' '}
               <span className="hero-word inline-block">startup.</span>
@@ -123,7 +123,7 @@ export default function HomePage() {
               <span className="hero-word inline-block gradient-text">global.</span>
             </h1>
 
-            <p className="hero-copy text-lg sm:text-xl text-ink-600 mt-8 leading-relaxed max-w-2xl mx-auto text-pretty">
+            <p className="hero-copy text-lg text-ink-600 mt-7 leading-relaxed max-w-2xl mx-auto text-pretty">
               The platform where founders discover the best channels to find early
               customers worldwide — and showcase their startups to a global community
               of early adopters.
@@ -139,12 +139,12 @@ export default function HomePage() {
                   onChange={(e) => setSearch(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
                   placeholder="Search channels, communities, platforms..."
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl border border-ink-200 bg-white text-ink-900 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:border-brand-300 shadow-soft transition-all"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-ink-200 bg-white/80 text-ink-900 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:border-brand-300 shadow-soft transition-all"
                 />
               </div>
               <button
                 onClick={handleSearch}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-semibold text-white bg-ink-900 hover:bg-brand-600 shadow-soft-lg transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-700 hover:to-accent-700 shadow-glow transition-all duration-300 hover:shadow-glow-lg hover:scale-[1.02]"
               >
                 <Search className="w-5 h-5" />
                 Search
