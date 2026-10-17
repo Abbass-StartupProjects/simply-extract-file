@@ -147,7 +147,7 @@ export default function SubmitStartupPage() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="form-card space-y-5 p-6 sm:p-10">
         <div className="reveal">
           <label htmlFor="su-name" className={labelClass}>Startup Name <span className="text-error-500">*</span></label>
           <input id="su-name" type="text" required value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="e.g. NimbusDeploy" className={inputClass} />
