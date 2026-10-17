@@ -1,0 +1,15 @@
+[functions.verify-boost]
+verify_jwt = true
+entrypoint = "./functions/verify-boost/index.ts"
+
+[functions.slack-notify]
+verify_jwt = false
+entrypoint = "./functions/slack-notify/index.ts"
+
+[functions.slack-settings]
+verify_jwt = true
+entrypoint = "./functions/slack-settings/index.ts"
+
+[functions.admin]
+verify_jwt = true
+entrypoint = "./functions/admin/index.ts"
