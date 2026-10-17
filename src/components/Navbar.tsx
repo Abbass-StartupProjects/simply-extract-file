@@ -57,7 +57,7 @@ export default function Navbar() {
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'glass border-b border-ink-200/60 shadow-soft'
-          : 'bg-transparent border-b border-transparent'
+          : 'bg-white border-b border-ink-200/60'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
