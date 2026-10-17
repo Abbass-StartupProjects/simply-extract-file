@@ -1,6 +1,6 @@
+import PageHero from '@/components/PageHero';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
-import PageHero from '@/components/PageHero';
   MessageSquare, CheckCircle2, AlertCircle, ArrowLeft, LockKeyhole,
   Bug, Lightbulb, Flag, HelpCircle, Clock, XCircle, Send, Loader2, ChevronRight,
 } from 'lucide-react';

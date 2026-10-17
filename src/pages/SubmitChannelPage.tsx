@@ -1,3 +1,4 @@
+import PageHero from '@/components/PageHero';
 import { useState } from 'react';
 import { Megaphone, CheckCircle2, AlertCircle, ArrowLeft, LockKeyhole } from 'lucide-react';
 import { useRouter } from '@/lib/router';
@@ -5,7 +6,6 @@ import { supabase } from '@/lib/supabase';
 import { useCategories, useRegions } from '@/lib/hooks';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 import { useAuth } from '@/lib/auth';
-import PageHero from '@/components/PageHero';
 
 export default function SubmitChannelPage() {
   const { navigate } = useRouter();

@@ -1,6 +1,6 @@
+import PageHero from '@/components/PageHero';
 import { useState, useEffect } from 'react';
 import {
-import PageHero from '@/components/PageHero';
   Bell, CheckCircle2, AlertCircle, Loader2, Slack, Save, ExternalLink,
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth';

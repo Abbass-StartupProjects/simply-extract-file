@@ -1,3 +1,4 @@
+import PageHero from '@/components/PageHero';
 import { useState } from 'react';
 import { Rocket, CheckCircle2, AlertCircle, ArrowLeft, Sparkles, LockKeyhole } from 'lucide-react';
 import { useRouter } from '@/lib/router';
@@ -6,7 +7,6 @@ import { useCategories, useRegions } from '@/lib/hooks';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 import { useAuth } from '@/lib/auth';
 import BoostModal from '@/components/BoostModal';
-import PageHero from '@/components/PageHero';
 
 export default function SubmitStartupPage() {
   const { navigate } = useRouter();
