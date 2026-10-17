@@ -289,3 +289,33 @@
     border-radius: 0.5rem;
   }
 }
+
+/* ===== Redesign: motion system ===== */
+@keyframes aurora { 0%,100% { transform: translate3d(0,0,0) scale(1); } 33% { transform: translate3d(6%,-4%,0) scale(1.08); } 66% { transform: translate3d(-5%,5%,0) scale(0.95); } }
+@keyframes marquee { to { transform: translate3d(-50%,0,0); } }
+@keyframes orbit-float { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-14px) rotate(2deg); } }
+@keyframes rocket-hover { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes border-spin { to { --angle: 360deg; } }
+@keyframes glow-pulse { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: .9; transform: scale(1.08); } }
+@property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+.aurora-blob { will-change: transform; animation: aurora 18s ease-in-out infinite; }
+.rocket-float { animation: rocket-hover 6s ease-in-out infinite; will-change: transform; }
+.chip-float { animation: orbit-float 7s ease-in-out infinite; will-change: transform; }
+.glow-pulse { animation: glow-pulse 5s ease-in-out infinite; }
+.orbit-ring { animation: spin-slow 40s linear infinite; }
+.marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee { mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.conic-border { position: relative; isolation: isolate; }
+.conic-border::before { content: ''; position: absolute; inset: -1.5px; border-radius: inherit; z-index: -1;
+  background: conic-gradient(from var(--angle), #2563eb, #06b6d4, #a5f3fc, #2563eb); animation: border-spin 6s linear infinite; }
+.bento-card { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s; }
+.bento-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px -24px rgba(37,99,235,.35); }
+.shine { position: relative; overflow: hidden; }
+.shine::after { content: ''; position: absolute; inset: 0; transform: translateX(-120%); background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%); transition: transform .8s ease; }
+.shine:hover::after { transform: translateX(120%); }
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob, .rocket-float, .chip-float, .glow-pulse, .orbit-ring, .marquee-track, .conic-border::before { animation: none !important; }
+}
